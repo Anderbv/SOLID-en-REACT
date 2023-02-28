@@ -1,0 +1,14 @@
+<Button>{children}</button> //es extensible
+<Button title={"oeoe"}/> //no es extensible
+
+<Button>
+    <ButtonLeftIcon>
+        <svg ..../>
+    </ButtonLeftIcon>
+    Click aqui
+</Button>
+//esto podria funcionar desde fuera sin necesidad de entrar al componente
+button, hemos podido extender su funcionalidad sin modificar el original
+de esta forma respetamos el componente por dentro, no modificamos
+en nada su funcionalidad, solo desde fuera extendenmos su funcionalidad y
+apartir de ahi creamos más

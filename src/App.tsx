@@ -1,33 +1,21 @@
-import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
-import axios from 'axios';
-import useFetchTodo from './hooks/useFetchTodo';
-
-
+import { Title, TitleWithButtonProps, TitleWithLink } from './openClosedPrinciple/app'
+import AppTodos from './SingleResponsabilityP/app'
 
 function App() {
 
-  // //required parce readonly
-  //single responsability
-  //este componente solo se encarga de renderizar los datos
-  const {todo, isFetching} = useFetchTodo();
-
-  if(isFetching) {
-    return <p>Loading...</p>
+  function saludar() {
+    console.log("hola")
   }
 
+  //renderizando componentes que extendieden de un padre
   return (
-    <ul className="App">
-      {todo.map((todo: any, index: number) => {
-        return (
-          <li key={index}>
-            <span>{todo.id}</span>
-            <span>{todo.title}</span>
-          </li>
-        )
-      })}
-    </ul>
+    <div className='App'>
+      {/* <AppTodos /> */}
+      <Title title='Hola como estan'><> </></Title>
+      <TitleWithLink title='Hola como van' href='ander.com' buttonText='Dulanto'/>
+      <TitleWithButtonProps title='Hola como van' onClick={saludar} buttonText='Dulanto'/>
+    </div>
   )
 }
 
