@@ -33,13 +33,13 @@ export const TitleWithLink: FC<TitleWithLinkProps> = ({title, href, buttonText})
 //Cumplimos con este principio, el que este abierta a extenderse y que este
 //cerrado a modificaciones
 
-type TitleWithButtonProps = {
+type TitleWithButton = {
   title: string;
   buttonText: string;
   onClick: () => void;
 }
 
-export const TitleWithButtonProps: FC<TitleWithButtonProps> = ({title, buttonText, onClick}) => {
+export const TitleWithButton: FC<TitleWithButton> = ({title, buttonText, onClick}) => {
   return (
     <Title title={title}>
       <button onClick={onClick}>{buttonText}</button>
